@@ -4,6 +4,8 @@
 
 基于图像识别的绝区零赛博钓鱼脚本。  
 下载后直接运行 `近岸.py` 和 `石礁.py` 即可在对应的区域自动钓鱼。
+B站展示链接
+https://www.bilibili.com/video/BV1k8ApeaELT/ 
 
 ---
 
