@@ -75,12 +75,12 @@ def mainloop():
         left, top, right, bottom = 2030, 1070, 2240, 1280
         
         # 加载模板图像
-        template = cv2.imread('template.png')
-        shou = cv2.imread('shou.png')
-        rightshort = cv2.imread('rightshort1.png')
-        rightlong = cv2.imread('rightlong1.png')
-        leftshort = cv2.imread('leftshort1.png')
-        leftlong = cv2.imread('leftlong1.png')
+        template = cv2.imread('images/template.png')
+        shou = cv2.imread('images/shou.png')
+        rightshort = cv2.imread('images/rightshort1.png')
+        rightlong = cv2.imread('images/rightlong1.png')
+        leftshort = cv2.imread('images/leftshort1.png')
+        leftlong = cv2.imread('images/leftlong1.png')
         f1 = template
         num = 0
 
