@@ -21,6 +21,7 @@ INTERVAL = 0.01
 EXIT_KEY = keyboard.Key.esc
 SWITCH_KEY = keyboard.KeyCode.from_char("k")
 
+running = False
 # 查找窗口
 def find_window(window_name):
     windows = gw.getWindowsWithTitle(window_name)
@@ -134,11 +135,11 @@ def mainloop():
                 pydirectinput.click(x=2000, y=900)
             # 尝试减少每次的 sleep，使程序更加灵活
             screenshot_pil = Image.fromarray(screenshot1)
-            save_image(screenshot_pil, "screenshot1.png")
+            save_image(screenshot_pil, "images/screenshot1.png")
             screenshot_pil = Image.fromarray(screenshot2)
-            save_image(screenshot_pil, "screenshot2.png")
+            save_image(screenshot_pil, "images/screenshot2.png")
             screenshot_pil = Image.fromarray(screenshot3)
-            save_image(screenshot_pil, "screenshot3.png")
+            save_image(screenshot_pil, "images/screenshot3.png")
             time.sleep(0.1)  # 每次迭代稍微睡眠一下，减轻 CPU 压力
 
 def toggle_running(key):

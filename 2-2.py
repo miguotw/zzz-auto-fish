@@ -133,11 +133,11 @@ def mainloop():
                     pydirectinput.keyUp('a')  # 释放 'a' 键
 
             screenshot_pil = Image.fromarray(screenshot1)
-            save_image(screenshot_pil, "screenshot1.png")
+            save_image(screenshot_pil, "images/screenshot1.png")
             screenshot_pil = Image.fromarray(screenshot2)
-            save_image(screenshot_pil, "screenshot2.png")
+            save_image(screenshot_pil, "images/screenshot2.png")
             screenshot_pil = Image.fromarray(screenshot3)
-            save_image(screenshot_pil, "screenshot3.png")
+            save_image(screenshot_pil, "images/screenshot3.png")
 
             if  window.isActive:
                 print("窗口最前，点击")
