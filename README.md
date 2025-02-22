@@ -24,12 +24,12 @@ https://www.bilibili.com/video/BV1k8ApeaELT/
 
 ### 安装依赖
 
-1. 克隆本仓库到本地：
+1. 克隆本仓库到本地：（直接打包下载我的也行）
    ```bash
    git clone https://github.com/your-repo(改成你自己的fork仓库)/zzz-auto-fish.git
    cd zzz-auto-fish
    ```
-2. 安装依赖：
+2. 安装依赖：（也可以直接运行，报错后将信息丢给ai，他会提示你要装什么库）
    ```bash
    pip install -r requirements.txt
    ```
