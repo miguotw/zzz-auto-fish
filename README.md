@@ -58,7 +58,7 @@ https://www.bilibili.com/video/BV1k8ApeaELT/
 
 - **Python 版本**：建议使用 Python 3.12，其他版本可能不兼容。
 - 代码里这部分估计是需要改的： 设置区域 left, top, right, bottom = 2060, 1100, 2210, 1250。 
-
+- 因为我的屏幕是2560*1440，每个人的显示大小可能不同，识别的位置自然有区别
 ---
 
 ## 问题反馈
