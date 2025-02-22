@@ -26,7 +26,7 @@ https://www.bilibili.com/video/BV1k8ApeaELT/
 
 1. 克隆本仓库到本地：
    ```bash
-   git clone https://github.com/your-repo/zzz-auto-fish.git
+   git clone https://github.com/your-repo(改成你自己的fork仓库)/zzz-auto-fish.git
    cd zzz-auto-fish
    ```
 2. 安装依赖：
