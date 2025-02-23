@@ -42,23 +42,58 @@ https://www.bilibili.com/video/BV1k8ApeaELT/
   python 近岸.py
   ```
 - **石礁区域钓鱼**：
+  
   ```bash
   python 石礁.py
+  ```
+
+- **长桥区域钓鱼**：
+
+  ```bash
+  python 长桥钓点.py
+  ```
+
+- **深水区域钓鱼**：
+
+  ```bash
+  python 深水钓点.py
   ```
 
 
 ## 使用说明
 
 1. **确保游戏窗口在前台**：脚本依赖于屏幕截图，因此游戏窗口必须处于前台且不被遮挡。
-2. **运行脚本**：根据钓鱼区域选择运行 `近岸.py` 或 `石礁.py`。
+2. **运行脚本**：根据钓鱼区域选择运行 `近岸.py` 或 `石礁.py`或者`长桥钓点`。
 3. **结束脚本**：脚本运行时，任意窗口按esc即可退出
 
 ---
 
+## 钓鱼点适配
+
+- 目前适配只有长桥钓点、近岸钓点、石礁钓点
+
+- 以下说明均以2K分辨率(2560*1440)并且不开启HDR为准，其他条件下请自行修改适配，截图坐标可以自行寻找软件工具定位修改
+
+- 由于分辨率不同，images文件夹内的识别图片模板理应需要更换，包括4张长按、连按截图(leftshort1.png, rightshort1.png, leftlong1.png, rightlong1.png)，2张识别钓鱼状态的截图(template, shou.png)
+
+- ```python
+  # 钓鱼按钮图标的区域范围, 一般来说不用改
+  left, top, right, bottom = 2030, 1070, 2240, 1280
+  
+  # 钓鱼按钮范围截图
+  screenshot1 = capture_window_area(window, left, top, right, bottom)
+  # 右侧按钮位置
+  screenshot2 = capture_window_area(window, 1600, 400, 1780, 490)
+  # 左侧按钮位置
+  screenshot3 = capture_window_area(window, 1500, 400, 1680, 480)
+  
+  # 各截图匹配相似度调整, 显示分辨率一致的情况下，一般相似度能在0.7以上，相应调低一点也行，留意运行时控制台的print信息调整
+  if xxxxx_val > 0.4:
+  ```
+
 ## 注意事项
 
 - **Python 版本**：建议使用 Python 3.12，其他版本可能不兼容。
-- 代码里这部分估计是需要改的： 设置区域 left, top, right, bottom = 2060, 1100, 2210, 1250。 
 - 因为我的屏幕是2560*1440，每个人的显示大小可能不同，识别的位置自然有区别，欢迎大家给出不同分辨率的参数
 - 因为用的是灰度图，电脑开了HDR的话会过曝，记得关下
 ---
