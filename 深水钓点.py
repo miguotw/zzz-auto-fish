@@ -79,11 +79,11 @@ def mainloop():
         window.activate()
 
         # 设置钓鱼按钮图标的区域范围
-        left, top, right, bottom = 2030, 1070, 2240, 1280
-
+        left, top, right, bottom = 2060, 1100, 2210, 1250
+        
         # 加载模板图像
-        template = cv2.imread('images/template.png')
-        shou = cv2.imread('images/shou.png')
+        template = cv2.imread('images/yuanhaif.png')
+        shou = cv2.imread('images/yuanshou.png')
         rightshort = cv2.imread('images/rightshort1.png')
         rightlong = cv2.imread('images/rightlong1.png')
         leftshort = cv2.imread('images/leftshort1.png')
@@ -104,7 +104,7 @@ def mainloop():
             max_val, max_loc = match_template(screenshot1, f1)
             print(f"匹配相似度：{max_val}")
 
-            if max_val > 0.90:  # 设置阈值
+            if max_val > 0.97:  # 设置阈值
                 print("相似度高，点击 F 键")
                 pydirectinput.press('f')  # 模拟按下 F 键
                 f1 = shou if num == 0 else template  # 根据 num 来切换模板
