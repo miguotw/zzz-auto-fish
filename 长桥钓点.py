@@ -20,6 +20,8 @@ EXIT_KEY = keyboard.Key.esc
 SWITCH_KEY = keyboard.KeyCode.from_char("k")
 
 running = False
+xoffset=0
+yoffset=0
 
 
 # 查找窗口
@@ -139,7 +141,10 @@ def mainloop():
                 pydirectinput.press('space')
             if window.isActive:
                 print("窗口最前，点击")
-                pydirectinput.click(x=2000, y=900)
+                pydirectinput.click(
+                    x=window.left + 2000,
+                    y=window.top + 900
+                )
             # 尝试减少每次的 sleep，使程序更加灵活
             screenshot_pil = Image.fromarray(screenshot1)
             save_image(screenshot_pil, "images/screenshot1.png")
@@ -181,7 +186,15 @@ if __name__ == '__main__':
     # 判断当前进程是否以管理员权限运行
     if ctypes.windll.shell32.IsUserAnAdmin():
         print('当前已是管理员权限')
+        print('是否是2560*1440的有边框窗口模式？')
+        print("1. 是 2. 否")
+        choice = input("请选择：")
+        if choice == '1':
+            xoffset = 11
+            yoffset = 45
+
         mymain()
+
     else:
         print('当前不是管理员权限，以管理员权限启动新进程...')
         ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
