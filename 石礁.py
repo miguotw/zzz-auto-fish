@@ -39,6 +39,8 @@ def capture_window_area(window, left, top, right, bottom):
     # 获取窗口的屏幕坐标
     window_left, window_top = window.topleft
     # 调整截图区域的坐标
+    window_left += xoffset
+    window_top += yoffset
     capture_area = (window_left + left, window_top + top, window_left + right - left, window_top + bottom - top)
     
     # 截图
