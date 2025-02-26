@@ -32,7 +32,7 @@ https://www.bilibili.com/video/BV1k8ApeaELT/
    ```
 2. 安装依赖：（也可以直接运行，报错后将信息丢给ai，他会提示你要装什么库）
    ```bash
-   pip install -r requirements.txt
+   pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
    ```
 
 ### 运行脚本
@@ -70,7 +70,7 @@ https://www.bilibili.com/video/BV1k8ApeaELT/
 
 ## 钓鱼点适配
 
-- 目前适配只有长桥钓点、近岸钓点、石礁钓点
+- 如果pywindow报错，可以尝试修改代码里的window.activate()或者直接注释掉这一行
 
 - 以下说明均以2K分辨率(2560*1440)并且不开启HDR为准，其他条件下请自行修改适配，截图坐标可以自行寻找软件工具定位修改
 
