@@ -116,7 +116,7 @@ def mainloop():
             if rightshort_val > 0.6:
                 pydirectinput.press('space')
                 print("右短匹配相似度：连点D键")
-                rapid_click('d', 6, 0.15)
+                rapid_click('d', 6, 0.05)
 
             if rightlong_val > 0.6:
                 
@@ -129,7 +129,7 @@ def mainloop():
             if leftshort_val > 0.4:
                 
                 print("左短匹配相似度：连点A键")
-                rapid_click('a', 6, 0.15)
+                rapid_click('a', 6, 0.05)
                 pydirectinput.press('space')
             if leftlong_val > 0.4:
                 
@@ -145,12 +145,12 @@ def mainloop():
                     y=window.top + 900
                 )
             # 尝试减少每次的 sleep，使程序更加灵活
-            screenshot_pil = Image.fromarray(screenshot1)
-            save_image(screenshot_pil, "images/screenshot1.png")
-            screenshot_pil = Image.fromarray(screenshot2)
-            save_image(screenshot_pil, "images/screenshot2.png")
-            screenshot_pil = Image.fromarray(screenshot3)
-            save_image(screenshot_pil, "images/screenshot3.png")
+            # screenshot_pil = Image.fromarray(screenshot1)
+            # save_image(screenshot_pil, "images/screenshot1.png")
+            # screenshot_pil = Image.fromarray(screenshot2)
+            # save_image(screenshot_pil, "images/screenshot2.png")
+            # screenshot_pil = Image.fromarray(screenshot3)
+            # save_image(screenshot_pil, "images/screenshot3.png")
             
 
 def toggle_running(key):
