@@ -32,8 +32,13 @@ https://www.bilibili.com/video/BV1k8ApeaELT/
    ```
 2. 安装依赖：（也可以直接运行，报错后将信息丢给ai，他会提示你要装什么库）
    ```bash
-   pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+   pip install -r require.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
    ```
+    或者
+   ```bash
+   pip install -r requirements.txt 
+   ```
+
 
 ### 运行脚本
 

@@ -41,7 +41,7 @@ def capture_window_area(window, left, top, right, bottom):
     window_left += xoffset
     window_top += yoffset
     # 调整截图区域的坐标
-    capture_area = (window_left + left, window_top + top, window_left + right - left, window_top + bottom - top)
+    capture_area = (window_left + left, window_top + top,  right - left,  bottom - top)
 
     # 截图
     screenshot = pyautogui.screenshot(region=capture_area)
@@ -189,13 +189,16 @@ if __name__ == '__main__':
     if ctypes.windll.shell32.IsUserAnAdmin():
         print('当前已是管理员权限')
         print('是否是2560*1440的有边框窗口模式？')
-        print("1. 是 2. 否")
+        print("1. 有边框窗口 2. 2560*1440全屏 3.其他")
         choice = input("请选择：")
         if choice == '1':
             xoffset = 11
             yoffset = 45
-
+        if choice == '3':
+            print('其他分辨率请修改识别区域的坐标再使用')
+            time.sleep(3)
         mymain()
+
 
     else:
         print('当前不是管理员权限，以管理员权限启动新进程...')

@@ -1,0 +1,15 @@
+MouseInfo
+pyautogui
+PyDirectInput
+pygetwindow
+PyMsgBox
+PyRect
+PyScreeze
+numpy
+opencv-python
+pillow
+pip
+pynput
+pyperclip
+pytweening
+six

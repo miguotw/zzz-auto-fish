@@ -186,12 +186,14 @@ if __name__ == '__main__':
     if ctypes.windll.shell32.IsUserAnAdmin():
         print('当前已是管理员权限')
         print('是否是2560*1440的有边框窗口模式？')
-        print("1. 是 2. 否")
+        print("1. 有边框窗口 2. 2560*1440全屏 3.其他")
         choice = input("请选择：")
         if choice == '1':
             xoffset = 11
             yoffset = 45
-
+        if choice == '3':
+            print('其他分辨率请修改识别区域的坐标再使用')
+            time.sleep(3)
         mymain()
 
     else:

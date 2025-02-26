@@ -41,7 +41,7 @@ def capture_window_area(window, left, top, right, bottom):
     # 调整截图区域的坐标
     window_left += xoffset
     window_top += yoffset
-    capture_area = (window_left + left, window_top + top, window_left + right - left, window_top + bottom - top)
+    capture_area = (window_left + left, window_top + top,  right - left,  bottom - top)
     
     # 截图
     screenshot = pyautogui.screenshot(region=capture_area)
@@ -99,7 +99,7 @@ def mainloop():
             max_val, max_loc = match_template(screenshot1, f1)
             print(f"匹配相似度：{max_val}")
             
-            if max_val > 0.96:  # 设置阈值
+            if max_val > 0.97:  # 设置阈值
                 print("相似度高，点击 F 键")
                 # if(num==1):
                 #     time.sleep(0.5)
@@ -113,12 +113,12 @@ def mainloop():
             rightlong_val, _ = match_template(screenshot2, rightlong)
             leftshort_val, _ = match_template(screenshot3, leftshort)
             leftlong_val, _ = match_template(screenshot3, leftlong)
-            if rightshort_val > 0.4:
+            if rightshort_val > 0.6:
                 pydirectinput.press('space')
                 print("右短匹配相似度：连点D键")
                 rapid_click('d', 6, 0.15)
 
-            if rightlong_val > 0.4:
+            if rightlong_val > 0.6:
                 
                 print("右长匹配相似度：长按D键")
                 pydirectinput.keyDown('d')  # 长按 'D' 键
@@ -151,7 +151,7 @@ def mainloop():
             save_image(screenshot_pil, "images/screenshot2.png")
             screenshot_pil = Image.fromarray(screenshot3)
             save_image(screenshot_pil, "images/screenshot3.png")
-            time.sleep(0.1)  # 每次迭代稍微睡眠一下，减轻 CPU 压力
+            
 
 def toggle_running(key):
     global running
@@ -183,12 +183,14 @@ if __name__ == '__main__':
     if ctypes.windll.shell32.IsUserAnAdmin():
         print('当前已是管理员权限')
         print('是否是2560*1440的有边框窗口模式？')
-        print("1. 是 2. 否")
+        print("1. 有边框窗口 2. 2560*1440全屏 3.其他")
         choice = input("请选择：")
         if choice == '1':
             xoffset = 11
             yoffset = 45
-
+        if choice == '3':
+            print('其他分辨率请修改识别区域的坐标再使用')
+            time.sleep(3)
         mymain()
 
     else:
