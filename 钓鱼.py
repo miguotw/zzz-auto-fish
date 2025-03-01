@@ -38,8 +38,10 @@ RIGHT_KEY = 'd'
 # 操作配置
 ## 连点次数
 RAPID_CLICK_TIMES = 8
-## 连点间隔范围(s)
-RAPID_CLICK_INTERVAL = (0.06, 0.11)
+## 按下延迟范围(s)
+PRESS_DELAY = (0.04, 0.06)
+## 抬起延迟范围(s)
+RELEASE_DELAY = (0.07, 0.09)
 ## 长按时间(s)
 LONG_PRESS_TIME = 1.5
 ## 钓鱼动作后的延迟时间(s)
@@ -131,22 +133,21 @@ def match_template(screenshot, template):
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
     return max_val, max_loc
 
-def rapid_click(key, times, interval_range=(0.06, 0.11)):
+def rapid_click(key, times):
     """
-    连点函数，使用随机间隔时间
+    连点函数，使用随机延迟时间
     :param key: 要按下的按键
     :param times: 连点次数
-    :param interval_range: 间隔时间范围（秒），默认60-110ms
     """
     for _ in range(times):
         # 按下键
         pydirectinput.keyDown(key)
-        # 按下延迟 40-60ms
-        time.sleep(0.04 + random() * 0.02)
+        # 按下延迟
+        time.sleep(PRESS_DELAY[0] + random() * (PRESS_DELAY[1] - PRESS_DELAY[0]))
         # 抬起键
         pydirectinput.keyUp(key)
-        # 抬起延迟 70-90ms
-        time.sleep(0.07 + random() * 0.02)
+        # 抬起延迟
+        time.sleep(RELEASE_DELAY[0] + random() * (RELEASE_DELAY[1] - RELEASE_DELAY[0]))
 
 def mainloop(spot_name):
     window_name = "绝区零"
@@ -191,7 +192,7 @@ def mainloop(spot_name):
                 }
 
                 if right_vals['short'] > RIGHT_SHORT_THRESHOLD:
-                    rapid_click(RIGHT_KEY, RAPID_CLICK_TIMES, RAPID_CLICK_INTERVAL)
+                    rapid_click(RIGHT_KEY, RAPID_CLICK_TIMES)
                     pydirectinput.press(SPACE_KEY)
                 elif right_vals['long'] > RIGHT_LONG_THRESHOLD:
                     pydirectinput.keyDown(RIGHT_KEY)
@@ -199,7 +200,7 @@ def mainloop(spot_name):
                     pydirectinput.keyUp(RIGHT_KEY)
                     pydirectinput.press(SPACE_KEY)
                 elif left_vals['short'] > LEFT_SHORT_THRESHOLD:
-                    rapid_click(LEFT_KEY, RAPID_CLICK_TIMES, RAPID_CLICK_INTERVAL)
+                    rapid_click(LEFT_KEY, RAPID_CLICK_TIMES)
                     pydirectinput.press(SPACE_KEY)
                 elif left_vals['long'] > LEFT_LONG_THRESHOLD:
                     pydirectinput.keyDown(LEFT_KEY)
