@@ -72,7 +72,7 @@ def rapid_click(key, times, interval):
 
 # 主程序
 def mainloop():
-    window_name = "绝区零"
+    window_name = "ZenlessZoneZero" #绝区零
     window = find_window(window_name)
 
     if window:

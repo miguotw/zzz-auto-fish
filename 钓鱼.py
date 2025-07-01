@@ -150,7 +150,7 @@ def rapid_click(key, times):
         time.sleep(RELEASE_DELAY[0] + random() * (RELEASE_DELAY[1] - RELEASE_DELAY[0]))
 
 def mainloop(spot_name):
-    window_name = "绝区零"
+    window_name = "ZenlessZoneZero" #绝区零
     window = find_window(window_name)
     
     if window:

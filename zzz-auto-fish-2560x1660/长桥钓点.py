@@ -91,7 +91,7 @@ def display_screenshots(screenshot1, screenshot2, screenshot3):
 
 # 主程序
 def mainloop(argsQueue):
-    window_name = "绝区零"
+    window_name = "ZenlessZoneZero" #绝区零
     window = find_window(window_name)
 
     if window:
